@@ -95,6 +95,7 @@ a {
   cursor: pointer;
   background-color: transparent;
   border: none;;
+  color: white;
 }
 
 .mobile-menu-link:hover:after {

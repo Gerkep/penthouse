@@ -12,8 +12,8 @@ import { HiArrowsExpand, HiOutlineCubeTransparent } from "react-icons/hi";
 
 export default function Home() {
 
-  const [NFTBought, setNFTBought] = useState(true);
-  const [openPromotionModal, setOpenPromotionModal] = useState(true);
+  const [NFTBought, setNFTBought] = useState(false);
+  const [openPromotionModal, setOpenPromotionModal] = useState(false);
   return (
     <>
       {NFTBought && <BuyerModal onClose={() => setNFTBought(false)}/>}
@@ -25,7 +25,7 @@ export default function Home() {
       <TitleSection>
         <PreTitle className={styles.roboto}>City Park Presents:</PreTitle>
         <MainTitle><LightText>Kenzo</LightText> Penthouse</MainTitle>
-        <MainDescription className={styles.roboto}>Luxurious penthouse in heart of Poznań backed by blockchain.</MainDescription>
+        <MainDescription className={styles.roboto}>Luxurious penthouse located in heart of Poznań backed by blockchain technology.</MainDescription>
       </TitleSection>
       <ButtonsSection>
         <MainBtn style={{backgroundColor: "black"}}>Learn more</MainBtn>
@@ -121,6 +121,7 @@ const MainBtn = styled.button`
   margin: 10vw 5vw 10vw 0;
   font-size: 3vw;
   border-radius: 5px;
+  color: white;
   border: none;
   cursor: pointer;
 `

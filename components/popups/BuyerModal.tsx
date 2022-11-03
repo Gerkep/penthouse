@@ -8,7 +8,7 @@ const BuyerModal = ({onClose}: any) => {
     
     return (
         <ModalTemplate onClose={onClose}>
-            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center", marginBottom: "3vw;"}}>
+            <div style={{display: "flex", flexWrap: "wrap", justifyContent: "center", marginBottom: "3vw"}}>
             <NFTContainer>
                 <Image alt="background" layout='fill' objectFit='cover'  src={kenzoNFT}></Image> 
             </NFTContainer>
@@ -32,7 +32,7 @@ export default BuyerModal;
 
 const Description = styled.p`
     text-align: center;
-    font-size: 3.5vw;
+    font-size: 4vw;
     line-height: 6vw;
     color: #ABABAB;
     @media only screen and (min-width: 768px) {
@@ -43,8 +43,8 @@ const Description = styled.p`
 `
 
 const NFTContainer = styled.div`
-    width: 30vw;
-    height: 30vw;
+    width: 40vw;
+    height: 40vw;
     position: relative;
     border: solid white 1px;
     border-radius: 10px;
@@ -96,7 +96,7 @@ const SubmitBtn = styled.button`
     width: 50vw;
     height: 10vw;
     background-color: white;
-    font-size: 3vw;
+    font-size: 4vw;
     color: black;
     border: none;
     border-radius: 5px;

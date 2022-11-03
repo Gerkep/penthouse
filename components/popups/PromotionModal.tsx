@@ -20,7 +20,7 @@ export default PromotionModal;
 
 const PromotionDescription = styled.p`
     text-align: center;
-    font-size: 3vw;
+    font-size: 4vw;
     margin-top: 15vw;
     color: #ABABAB;
     @media only screen and (min-width: 768px) {
@@ -31,7 +31,7 @@ const PromotionDescription = styled.p`
 `
 
 const Sum = styled.p`
-    font-size: 8vw;
+    font-size: 12vw;
     text-align: center;
     margin-top: 10vw;
     font-weight: 700;
@@ -45,7 +45,7 @@ const ApplyButton = styled.button`
     margin-top: 20vw;
     padding: 3vw 22vw 3vw 22vw;
     background-color: white;
-    font-size: 3vw;
+    font-size: 4vw;
     color: black;
     border: none;
     cursor: pointer;
