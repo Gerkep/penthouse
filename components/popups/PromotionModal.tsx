@@ -34,6 +34,7 @@ const Sum = styled.p`
     font-size: 12vw;
     text-align: center;
     margin-top: 10vw;
+    color: white;
     font-weight: 700;
     @media only screen and (min-width: 768px) {
         font-size: 4vw;
