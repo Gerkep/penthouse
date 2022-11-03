@@ -14,7 +14,7 @@ const BuyerModal = ({onClose}: any) => {
             </NFTContainer>
             </div>
             <ModalTitle>Congratulations!</ModalTitle>
-            <Description className={styles.roboto}>You have sucessfully minted Kenzo Penthouse! Schedule a meeting with us whenever suits you, so we can provide you with more details on your property.</Description>
+            <Description className={styles.roboto}>You have sucessfully minted a Kenzo Penthouse! Schedule a meeting with us whenever suits you, so we can provide you with more details on your property.</Description>
             {/* <form style={{display: "flex", flexWrap: "wrap", justifyContent: "center"}}>
                 <InputContainer>
                     <InputLabel>Promotor Address(optional)</InputLabel>
