@@ -94,6 +94,7 @@ const NavbarButton = styled.button`
     @media only screen and (min-width: 768px) {
         padding: 1vw 5vw 1vw 5vw;
         border-radius: 5px;
+        color: white;
         background-color: black;
         border: none;
         font-size: 1vw;
@@ -104,19 +105,11 @@ const NavbarButton = styled.button`
 
 const NavbarLink = styled.a`
     display: none;
+    color: white;
     @media only screen and (min-width: 768px) {
         margin: 0 7vw 0 0vw;
         font-size: 1vw;
         cursor: pointer;
         display: block;
-    }
-`
-
-const Hamburger = styled.div`
-    width: 12vw;
-    height: 12vw;
-    margin-right: 4vw;
-    @media only screen and (min-width: 768px) {
-        display: none;
     }
 `

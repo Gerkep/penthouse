@@ -76,6 +76,7 @@ const TitleSection = styled.div`
 
 const PreTitle = styled.p`
   font-size: 3vw;
+  color: white;
   @media only screen and (min-width: 768px) {
     font-size: 1vw;
   }
@@ -88,6 +89,7 @@ const MainTitle = styled.h1`
   font-size: 14vw;
   line-height: 15vw;
   margin-top: 3vw;
+  color: white;
   @media only screen and (min-width: 768px) {
     font-size: 7vw;
     line-height: 8vw;
@@ -99,6 +101,7 @@ const MainDescription = styled.p`
   font-size: 5vw;
   margin-top: 7vw;
   font-weight: 300;
+  color: white;
   @media only screen and (min-width: 768px) {
     font-size: 1.5vw;
     margin-top: 2vw;
@@ -143,6 +146,7 @@ const AboutContainer = styled.div`
 const AboutText = styled.p`
     margin-left: 0.5vw;
     font-size: 1vw;
+    color: white;
 `
 
 const MintContainer = styled.div`
@@ -162,6 +166,7 @@ const MintContainer = styled.div`
 
 const MintTitle = styled.h2`
   font-size: 2.5vw;
+  color: white;
 `
 
 const MintDescription = styled.p`
@@ -169,6 +174,7 @@ const MintDescription = styled.p`
     width: 80%;
     margin-top: 3vw;
     font-weight: 300;
+    color: white;
 `
 
 const MintEssentials = styled.div`
@@ -176,10 +182,12 @@ const MintEssentials = styled.div`
     width: 100%;
     margin-top: 3vw;
     align-items: center;
+    color: white;
 `
 
 const PriceLabel = styled.p`
     font-size: 1vw;
+    color: white;
 `
 
 const MintButton = styled.button`
