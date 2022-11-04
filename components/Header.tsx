@@ -3,6 +3,7 @@ import konkretLogo from "../public/img/konkretlogo.png";
 import Image from "next/image";
 import styles from '../styles/Home.module.css';
 import { useState } from "react";
+import Link from "next/link";
 
 const Header = ({onPromotionClick, onContactClick}: any) => {
     const [menuOpened, setMenuOpened] = useState(false);
@@ -33,7 +34,7 @@ const Header = ({onPromotionClick, onContactClick}: any) => {
                 <Image alt="background" layout='fill' objectFit='contain'  src={konkretLogo}></Image> 
             </Logo>
             <Navbar>
-                <NavbarLink className={styles.roboto}>Learn more</NavbarLink>
+                <Link href="#"><NavbarLink className={styles.roboto}>Learn more</NavbarLink></Link>
                 <NavbarLink onClick={onContactClick} className={styles.roboto}>Contact us</NavbarLink>
                 <NavbarButton onClick={onPromotionClick}>Promote & earn</NavbarButton>
                 <div onClick={clickHamburger} className="hamburger-btn" id="hamburger-btn">

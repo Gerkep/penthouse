@@ -10,10 +10,10 @@ import { IoIosPin } from "react-icons/io";
 import { IoPartlySunnyOutline } from "react-icons/io5";
 import { HiArrowsExpand, HiOutlineCubeTransparent } from "react-icons/hi";
 import Footer from '../components/Footer';
+import Link from 'next/link';
 
 export default function Home() {
 
-  const [NFTBought, setNFTBought] = useState(false);
   const [openPromotionModal, setOpenPromotionModal] = useState(false);
 
   const ref = useRef<null | HTMLDivElement>(null);
@@ -23,7 +23,6 @@ export default function Home() {
 
   return (
     <>
-      {NFTBought && <BuyerModal onClose={() => setNFTBought(false)}/>}
       {openPromotionModal && <PromotionModal onClose={() => setOpenPromotionModal(false)}/> }
       <Background>
           <Image alt="background" layout='fill' objectFit='cover'  src={kenzoBackground}></Image> 
@@ -36,7 +35,7 @@ export default function Home() {
       </TitleSection>
       <ButtonsSection>
         <MainBtn style={{backgroundColor: "black"}}>Learn more</MainBtn>
-        <MainBtn onClick={() => setNFTBought(true)} style={{backgroundColor: "white", color: "black"}}>Mint now</MainBtn>
+        <Link href="https://opensea.io/collection/kenzopenthouse"><MainBtn style={{backgroundColor: "white", color: "black"}}>Mint now</MainBtn></Link>
       </ButtonsSection>
       <AboutContainer>
         <IoIosPin style={{width: "1.5vw", height: "1.5vw", marginLeft: "2vw"}}></IoIosPin>
@@ -53,7 +52,7 @@ export default function Home() {
         <MintDescription className={styles.roboto}>The most luxurious penthouse listed as an NFT ever. Just mint, and get your keys ASAP.</MintDescription>
         <MintEssentials>
           <PriceLabel className={styles.roboto}>Price: 1696E</PriceLabel>
-          <MintButton onClick={() => setNFTBought(true)}>Mint now</MintButton>
+         <Link href="https://opensea.io/collection/kenzopenthouse"><MintButton>Mint now</MintButton></Link> 
         </MintEssentials>
       </MintContainer>
       <div ref={ref}>
