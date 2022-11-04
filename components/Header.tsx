@@ -2,11 +2,11 @@ import styled from "styled-components";
 import konkretLogo from "../public/img/konkretlogo.png";
 import Image from "next/image";
 import styles from '../styles/Home.module.css';
-import Link from "next/link";
 import { useState } from "react";
 
-const Header = ({onPromotionClick}: any) => {
+const Header = ({onPromotionClick, onContactClick}: any) => {
     const [menuOpened, setMenuOpened] = useState(false);
+
     const clickHamburger = () => {
         const button = document.getElementById("hamburger-btn");
         const menu = document.getElementById("menu");
@@ -34,7 +34,7 @@ const Header = ({onPromotionClick}: any) => {
             </Logo>
             <Navbar>
                 <NavbarLink className={styles.roboto}>Learn more</NavbarLink>
-                <NavbarLink className={styles.roboto}>Contact us</NavbarLink>
+                <NavbarLink onClick={onContactClick} className={styles.roboto}>Contact us</NavbarLink>
                 <NavbarButton onClick={onPromotionClick}>Promote & earn</NavbarButton>
                 <div onClick={clickHamburger} className="hamburger-btn" id="hamburger-btn">
                 <div className="hamburger"></div>
@@ -43,7 +43,7 @@ const Header = ({onPromotionClick}: any) => {
                 <div className="mobile-menu-items">
                     <button className="mobile-menu-link" onClick={onPromotionClick}>Share and earn</button>
                     <a href="#" className="mobile-menu-link">Learn more</a>
-                    <p className="mobile-menu-link" id="link">
+                    <p onClick={onContactClick} className="mobile-menu-link" id="link">
                         <b>Contact us</b>
                     </p>
                 </div>
@@ -103,13 +103,15 @@ const NavbarButton = styled.button`
     }
 `
 
-const NavbarLink = styled.a`
+const NavbarLink = styled.button`
     display: none;
     color: white;
     @media only screen and (min-width: 768px) {
         margin: 0 7vw 0 0vw;
         font-size: 1vw;
         cursor: pointer;
+        border: none;
+        background-color: transparent;
         display: block;
     }
 `

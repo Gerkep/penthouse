@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import kenzoBackground from '../public/img/background.png';
 import Image from 'next/image';
 import BuyerModal from '../components/popups/BuyerModal';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import PromotionModal from '../components/popups/PromotionModal';
 import styles from '../styles/Home.module.css';
 import { IoIosPin } from "react-icons/io";
@@ -15,6 +15,12 @@ export default function Home() {
 
   const [NFTBought, setNFTBought] = useState(false);
   const [openPromotionModal, setOpenPromotionModal] = useState(false);
+
+  const ref = useRef<null | HTMLDivElement>(null);
+  const handleScroll = () => {
+    ref.current?.scrollIntoView({behavior: 'smooth', block: 'start'});
+  };
+
   return (
     <>
       {NFTBought && <BuyerModal onClose={() => setNFTBought(false)}/>}
@@ -22,7 +28,7 @@ export default function Home() {
       <Background>
           <Image alt="background" layout='fill' objectFit='cover'  src={kenzoBackground}></Image> 
       </Background>
-      <Header onPromotionClick={() => setOpenPromotionModal(true)}/>
+      <Header onContactClick={handleScroll} onPromotionClick={() => setOpenPromotionModal(true)}/>
       <TitleSection>
         <PreTitle className={styles.roboto}>City Park Presents:</PreTitle>
         <MainTitle><LightText>Kenzo</LightText> Penthouse</MainTitle>
@@ -44,13 +50,15 @@ export default function Home() {
       </AboutContainer>
       <MintContainer>
         <MintTitle>Mint this penthouse</MintTitle>
-        <MintDescription className={styles.roboto}>The most luxurious penthouse NFT ever. Just mint, and get your keys.</MintDescription>
+        <MintDescription className={styles.roboto}>The most luxurious penthouse listed as an NFT ever. Just mint, and get your keys ASAP.</MintDescription>
         <MintEssentials>
           <PriceLabel className={styles.roboto}>Price: 1696E</PriceLabel>
           <MintButton onClick={() => setNFTBought(true)}>Mint now</MintButton>
         </MintEssentials>
       </MintContainer>
-      <Footer />
+      <div ref={ref}>
+        <Footer />
+      </div>
     </>
   )
 }
@@ -96,6 +104,7 @@ const MainTitle = styled.h1`
     font-size: 7vw;
     line-height: 8vw;
     margin-top: 0.5vw;
+    letter-spacing: .3rem;
   }
 `
 
