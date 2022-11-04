@@ -9,6 +9,7 @@ import styles from '../styles/Home.module.css';
 import { IoIosPin } from "react-icons/io";
 import { IoPartlySunnyOutline } from "react-icons/io5";
 import { HiArrowsExpand, HiOutlineCubeTransparent } from "react-icons/hi";
+import Footer from '../components/Footer';
 
 export default function Home() {
 
@@ -49,6 +50,7 @@ export default function Home() {
           <MintButton onClick={() => setNFTBought(true)}>Mint now</MintButton>
         </MintEssentials>
       </MintContainer>
+      <Footer />
     </>
   )
 }
@@ -135,7 +137,7 @@ const AboutContainer = styled.div`
     display: flex;
     padding: 1vw 4vw 1vw 1vw;
     height: 5vw;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 1);
     position: absolute;
     align-items: center;
     border-top-right-radius: 10px;
