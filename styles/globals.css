@@ -65,13 +65,14 @@ a {
 }
 .menu {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.261);
+  background-color: rgba(0, 0, 0, 0.761);
   backdrop-filter: blur(10px);
-  transform: translateY(-215vh);
+  -webkit-backdrop-filter: blur(10px);
+  transform: translateY(-115vh);
   transition: all 0.5s ease-in-out;
   z-index: 1;
 }
@@ -89,6 +90,7 @@ a {
   width: 100%;
   text-align: center;
   margin: 5vh 0 5vh 0;
+  font-family: Italiana;
   font-size: 5vw;
   opacity: 0;
   transition: all 0.7s ease;
