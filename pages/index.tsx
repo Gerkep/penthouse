@@ -29,7 +29,7 @@ export default function Home() {
       </Background>
       <Header onContactClick={handleScroll} onPromotionClick={() => setOpenPromotionModal(true)}/>
       <TitleSection>
-        <PreTitle className={styles.roboto}>City Park Presents:</PreTitle>
+        <PreTitle className={styles.roboto}>City Park presents:</PreTitle>
         <MainTitle><LightText>Kenzo</LightText> Penthouse</MainTitle>
         <MainDescription className={styles.roboto}>Luxurious penthouse located in heart of Poznań backed by blockchain technology.</MainDescription>
       </TitleSection>
