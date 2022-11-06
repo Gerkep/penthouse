@@ -34,7 +34,7 @@ const Header = ({onPromotionClick, onContactClick}: any) => {
                 <Image alt="background" layout='fill' objectFit='contain'  src={konkretLogo}></Image> 
             </Logo>
             <Navbar>
-                <Link href="#"><NavbarLink className={styles.roboto}>Learn more</NavbarLink></Link>
+                <Link href="https://hammerhead-doll-50e.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc"><NavbarLink className={styles.roboto}>Learn more</NavbarLink></Link>
                 <NavbarLink onClick={onContactClick} className={styles.roboto}>Contact us</NavbarLink>
                 <NavbarButton onClick={onPromotionClick}>Promote & earn</NavbarButton>
                 <div onClick={clickHamburger} className="hamburger-btn" id="hamburger-btn">
@@ -43,7 +43,7 @@ const Header = ({onPromotionClick, onContactClick}: any) => {
                 <div className="menu" id="menu">
                 <div className="mobile-menu-items">
                     <button className="mobile-menu-link" onClick={onPromotionClick}>Share and earn</button>
-                    <a href="#" className="mobile-menu-link">Learn more</a>
+                    <a href="https://hammerhead-doll-50e.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc" className="mobile-menu-link">Learn more</a>
                     <p onClick={onContactClick} className="mobile-menu-link" id="link">
                         <b>Contact us</b>
                     </p>

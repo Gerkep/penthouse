@@ -34,7 +34,7 @@ export default function Home() {
         <MainDescription className={styles.roboto}>Luxurious penthouse located in heart of Poznań backed by blockchain technology.</MainDescription>
       </TitleSection>
       <ButtonsSection>
-        <MainBtn style={{backgroundColor: "black"}}>Learn more</MainBtn>
+        <Link href="https://hammerhead-doll-50e.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc"><MainBtn style={{backgroundColor: "black"}}>Learn more</MainBtn></Link>
         <Link href="https://opensea.io/collection/kenzopenthouse"><MainBtn style={{backgroundColor: "white", color: "black"}}>Mint now</MainBtn></Link>
       </ButtonsSection>
       <AboutContainer>
