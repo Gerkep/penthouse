@@ -32,13 +32,14 @@ import highlightsMobile from "../public/img/highlightsMobile.png";
 import SlideLeft from "../components/animations/SlideLeft";
 import SlideRight from "../components/animations/SlideRight";
 import Appearing from "../components/animations/Appearing";
+import Loading from '../components/Loading';
 
 export default function Home() {
 
   const [openPromotionModal, setOpenPromotionModal] = useState(false);
 
   const [mobile, setMobile] = useState(false);
-  
+
   useEffect(() => {
     if(window.innerWidth <= 768){
       setMobile(true);
@@ -52,6 +53,7 @@ export default function Home() {
 
   return (
     <>
+      <Loading />
       {openPromotionModal && <PromotionModal onClose={() => setOpenPromotionModal(false)}/> }
       <div style={{position: "fixed", top: "0", left: "0", width: "100%", zIndex: "0"}}>
       <Background>
