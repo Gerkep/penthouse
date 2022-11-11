@@ -40,7 +40,7 @@ const Footer: NextPage = () => {
           </div>
         </div>
         <div className="contribution">
-          <p>Copyright © 2022 Victor Gallery. All rights reserved.</p>
+          <p>Copyright © 2022 City Park. All rights reserved.</p>
           <br /> <br className="mobile" />
           <p className="designer">Designed & Developed by Piotr Gerke.</p>
         </div>

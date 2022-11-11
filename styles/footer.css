@@ -1,13 +1,13 @@
 .footer {
   height: auto;
   width: 100%;
-  background-color: black;
+  background-color: #151515;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   color: white;
   margin-top: 30vw;
-  position: absolute;
+  position: relative;
 }
 .footer-logo-container {
   width: 100%;
@@ -85,12 +85,12 @@
 
 @media screen and (min-width: 768px) {
   .footer {
-    padding: 5vw 0 1vw 0;
+    padding: 3vw 0 1vw 0;
     height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    margin-top: 14vw;
+    margin-top: 8vw;
   }
   .footer-logo-container {
     width: 20vw;

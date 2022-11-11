@@ -22,12 +22,19 @@ const Header = ({onPromotionClick, onContactClick}: any) => {
         }else{
             button?.classList.remove("open");
             menu?.classList.remove("open");
-            links.forEach(link => {
-                link.classList.remove("appear");
-            })
             setMenuOpened(false);
         }
     }
+
+    const contactClickHandle = () => {
+        const button = document.getElementById("hamburger-btn");
+        const menu = document.getElementById("menu");
+        button?.classList.remove("open");
+        menu?.classList.remove("open");
+        onContactClick();
+        setMenuOpened(false);
+    }
+
     return (
         <HeaderContainer>
             <Logo>
@@ -36,15 +43,14 @@ const Header = ({onPromotionClick, onContactClick}: any) => {
             <Navbar>
                 <Link href="https://hammerhead-doll-50e.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc"><NavbarLink className={styles.roboto}>Learn more</NavbarLink></Link>
                 <NavbarLink onClick={onContactClick} className={styles.roboto}>Contact us</NavbarLink>
-                <NavbarButton onClick={onPromotionClick}>Promote & earn</NavbarButton>
+                <NavbarButton onClick={onPromotionClick}>Buy now</NavbarButton>
                 <div onClick={clickHamburger} className="hamburger-btn" id="hamburger-btn">
                 <div className="hamburger"></div>
                 </div>
                 <div className="menu" id="menu">
                 <div className="mobile-menu-items">
-                    <button className="mobile-menu-link" onClick={onPromotionClick}>Share and earn</button>
                     <a href="https://hammerhead-doll-50e.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc" className="mobile-menu-link">Learn more</a>
-                    <p onClick={onContactClick} className="mobile-menu-link" id="link">
+                    <p onClick={() => contactClickHandle()} className="mobile-menu-link" id="link">
                         <b>Contact us</b>
                     </p>
                 </div>
@@ -64,7 +70,7 @@ const HeaderContainer = styled.div`
     left: 0;
     z-index: 100;
     display: flex;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     align-items: center;
     @media only screen and (min-width: 768px) {
         padding: 1.5vw 2.5vw 1.5vw 2.5vw;
