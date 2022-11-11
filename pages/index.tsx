@@ -2,9 +2,7 @@ import styled from 'styled-components';
 import Header from '../components/Header';
 import kenzoBackground from '../public/img/background.png';
 import Image from 'next/image';
-import BuyerModal from '../components/popups/BuyerModal';
 import { useEffect, useRef, useState } from 'react';
-import PromotionModal from '../components/popups/PromotionModal';
 import styles from '../styles/Home.module.css';
 import { IoIosPin } from "react-icons/io";
 import { IoPartlySunnyOutline } from "react-icons/io5";
@@ -54,7 +52,6 @@ export default function Home() {
   return (
     <>
       <Loading />
-      {openPromotionModal && <PromotionModal onClose={() => setOpenPromotionModal(false)}/> }
       <div style={{position: "fixed", top: "0", left: "0", width: "100%", zIndex: "0"}}>
       <Background>
           <Image alt="background" layout='fill' objectFit='cover'  src={kenzoBackground}></Image> 

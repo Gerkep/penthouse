@@ -69,8 +69,14 @@ const HeaderContainer = styled.div`
     top: 0;
     left: 0;
     z-index: 100;
-    display: flex;
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". ."; 
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     align-items: center;
     @media only screen and (min-width: 768px) {
         padding: 1.5vw 2.5vw 1.5vw 2.5vw;
@@ -89,11 +95,11 @@ const Logo = styled.div`
 `
 
 const Navbar = styled.div`
-    width: 90vw;
     display: flex;
     height: 100%;
     align-items: center;
     justify-content: end;
+    -webkit-justify-content: end;
 `
 
 const NavbarButton = styled.button`
