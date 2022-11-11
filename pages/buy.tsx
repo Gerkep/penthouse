@@ -201,6 +201,7 @@ const PropText = styled.p`
 const Total = styled.p`
     font-size: 4vw;
     margin-top: 10vw;
+    color: white;
     @media only screen and (min-width: 768px) {
         font-size: 1.2vw;
         margin-top: 1.5vw;
@@ -224,6 +225,7 @@ const BuyButton = styled.button`
 `
 const Consent = styled.p`
     margin-top: 3vw;
+    color: white;
     font-size: 3vw;
     @media only screen and (min-width: 768px) {
         margin-top: 1vw;

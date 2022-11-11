@@ -64,12 +64,12 @@ export default function Home() {
       </TitleSection>
       <ButtonsSection>
         <Link href="https://hammerhead-doll-50e.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc"><MainBtn style={{backgroundColor: "black"}}>Learn more</MainBtn></Link>
-        <Link href="https://opensea.io/collection/kenzopenthouse"><MainBtn style={{backgroundColor: "white", color: "black"}}><b>Buy now</b></MainBtn></Link>
+        <Link href="/buy"><MainBtn style={{backgroundColor: "white", color: "black"}}><b>Buy now</b></MainBtn></Link>
       </ButtonsSection>
       <MintContainer>
         <MintTitle>Buy Kenzo today</MintTitle>
         <MintDescription className={styles.roboto}>The most luxurious penthouse listed with NFT ever. Pay in crypto and get the keys ASAP.</MintDescription>
-        <MintButton><b>Buy now</b></MintButton>
+        <Link href="/buy"><MintButton><b>Buy now</b></MintButton></Link>
       </MintContainer>
       </div>
       <AboutContainer>
@@ -308,9 +308,11 @@ export default function Home() {
                   Buy Kenzo Penthouse with Premium NFT now! 
                 </CTAText>
                 <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
+                <Link href="/buy">
                   <CTAButton>
                     <b>Buy now</b>
                   </CTAButton>
+                </Link>
                 </div>
               </CTAContainer>
             </CTABackground>

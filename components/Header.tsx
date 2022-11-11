@@ -43,7 +43,7 @@ const Header = ({onPromotionClick, onContactClick}: any) => {
             <Navbar>
                 <Link href="https://hammerhead-doll-50e.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc"><NavbarLink className={styles.roboto}>Learn more</NavbarLink></Link>
                 <NavbarLink onClick={onContactClick} className={styles.roboto}>Contact us</NavbarLink>
-                <NavbarButton onClick={onPromotionClick}>Buy now</NavbarButton>
+                <Link href="/buy"><NavbarButton onClick={onPromotionClick}>Buy now</NavbarButton></Link>
                 <div onClick={clickHamburger} className="hamburger-btn" id="hamburger-btn">
                 <div className="hamburger"></div>
                 </div>
@@ -70,7 +70,7 @@ const HeaderContainer = styled.div`
     left: 0;
     z-index: 100;
     display: grid; 
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1.2fr 0.8fr; 
     grid-template-rows: 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
@@ -79,7 +79,7 @@ const HeaderContainer = styled.div`
     -webkit-backdrop-filter: blur(5px);
     align-items: center;
     @media only screen and (min-width: 768px) {
-        padding: 1.5vw 2.5vw 1.5vw 2.5vw;
+        padding: 1.5vw 2.5vw 1.5vw 0vw;
     }
 `
 
