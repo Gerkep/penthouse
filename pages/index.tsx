@@ -83,12 +83,16 @@ export default function Home() {
         <IoPartlySunnyOutline style={{width: "1.5vw", height: "1.5vw", marginLeft: "3vw"}}></IoPartlySunnyOutline>
         <AboutText className={styles.roboto}>897 sq. ft. terrace</AboutText>
       </AboutContainer>
-      <PageContent>
+      <PageContent style={{marginTop: "100vh"}}>
         <Section>
           <SectionHeader>
-            <SlideLeft>
-            <Header2>Property Highlights</Header2>
-            </SlideLeft>
+            {mobile ?
+              <Header2>Property Highlights</Header2>            
+            :
+              <SlideLeft>
+              <Header2>Property Highlights</Header2>
+              </SlideLeft>            
+            }
             <SlideRight>
             <HeaderDescContainer>
             <HorizontalLine></HorizontalLine>
@@ -136,9 +140,13 @@ export default function Home() {
         </Section>
         <Section>
           <SectionHeader>
-            <SlideLeft>
-              <Header2>Kenzo Penthouse</Header2>
-            </SlideLeft>
+            {mobile ?
+              <Header2>KenzoPenthouse</Header2>            
+            :
+              <SlideLeft>
+              <Header2>KenzoPenthouse</Header2>
+              </SlideLeft>            
+            }
             <SlideRight>
             <HeaderDescContainer>
             <HorizontalLine></HorizontalLine>
@@ -212,11 +220,7 @@ export default function Home() {
                 </SideImage>
               </SlideLeft>
               <div>
-                {mobile ?
-                  <SlideLeft><NFTHeader>NFT Premium</NFTHeader></SlideLeft>
-                  :
-                  <NFTHeader>NFT Premium</NFTHeader>
-                }
+                <NFTHeader>NFT Premium</NFTHeader>
                 <TwoColumns>
                   <NFTImageContainer>
                     <Image alt="background" layout='fill' objectFit='cover'  src={NFTImage}></Image> 
@@ -446,12 +450,9 @@ const MintButton = styled.button`
     margin-left: 15vw;
 `
 const PageContent = styled.div`
-    margin-top: 100vh;
     z-index: 100;
     position: relative;
     background-color: black;
-    @media only screen and (min-width: 768px) {
-    }
 `
 const Section = styled.div`
   padding: 20vw 0vw 20vw 0vw; 
