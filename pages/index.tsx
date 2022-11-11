@@ -262,9 +262,13 @@ export default function Home() {
           <SectionContent>
             <TwoColumns>
               <div>
-                <SlideLeft>
+                {mobile ?
+                  <Header2>Plan and<br/> Room Dimensions</Header2>            
+                :
+                  <SlideLeft>
                   <Header2>Plan and<br/> Room Dimensions</Header2>
-                </SlideLeft>
+                  </SlideLeft>            
+                }
                 <PlanDescription className={styles.roboto}>
                   Lorem ipsum modulum cumulum gsaf u8o asdf wer naiuguh f adsfg;aerwgf aisudf bsajkh iuwe bkajlsdf uwioa nadk.
                 </PlanDescription>
@@ -528,11 +532,11 @@ const HighlightContainer = styled.div`
     position: relative;
     display: flex;
     justify-content: center;
+    border-radius: 10px;
     align-items: end;
     @media only screen and (min-width: 768px) { 
       width: 28vw;
       height: 30vw;
-      border-radius: 10px;
       overflow: hidden;
       margin-top: 0;
       margin: 0 0.5vw 0 0.5vw;
@@ -596,10 +600,10 @@ const PropertyImage = styled.div`
     width: 40vw;
     height: 70vw;
     margin-left: 5vw;
+    border-radius: 10px;
     @media only screen and (min-width: 768px) { 
       margin-left: 12vw;
       position: relative;
-      border-radius: 10px;
       overflow: hidden;
       width: 30vw;
       height: 35vw;
@@ -767,12 +771,12 @@ const NFTImageContainer = styled.div`
     border: 1px white solid;
     font-size: 3vw;
     margin-bottom: 10vw;
+    border-radius: 10px;
     box-shadow: 1px 1px 30px rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     @media only screen and (min-width: 768px) {
       box-shadow: none;
       border-radius: 0px;
-      border-radius: 10px;
       overflow: hidden;
       width: 18vw;
       height: 18vw;
@@ -896,10 +900,10 @@ const CTABackground = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
     @media only screen and (min-width: 768px) {
       height: 24vw;
       margin-top: 5vw;
-      border-radius: 10px;
       overflow: hidden;
     }
 `
