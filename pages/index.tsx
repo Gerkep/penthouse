@@ -637,7 +637,7 @@ const KenzoProps = styled.div`
 const Prop = styled.div`
     display: flex;
     align-items: center;
-    margin-bottom: 4vw;
+    margin-bottom: 2vw;
     font-size: 3vw;
     @media only screen and (min-width: 768px) { 
       font-size: 1vw;
@@ -731,7 +731,7 @@ const NFTProp = styled.div`
     display: flex;
     align-items: center;
     justify-content: left;
-    margin-bottom: 4vw;
+    margin-bottom: 2vw;
     font-size: 1vw;
   }
 `
