@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import kenzoBackground from '../public/img/background.png';
 import Image from 'next/image';
 import BuyerModal from '../components/popups/BuyerModal';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import PromotionModal from '../components/popups/PromotionModal';
 import styles from '../styles/Home.module.css';
 import { IoIosPin } from "react-icons/io";
@@ -29,11 +29,22 @@ import NFTImage from "../public/img/kenzoNFT.jpg";
 import planImage from "../public/img/plan.png";
 import livingRoom from "../public/img/kenzoLiving.png";
 import highlightsMobile from "../public/img/highlightsMobile.png";
+import SlideLeft from "../components/animations/SlideLeft";
+import SlideRight from "../components/animations/SlideRight";
+import Appearing from "../components/animations/Appearing";
 
 export default function Home() {
 
   const [openPromotionModal, setOpenPromotionModal] = useState(false);
 
+  const [mobile, setMobile] = useState(false);
+  
+  useEffect(() => {
+    if(window.innerWidth <= 768){
+      setMobile(true);
+    }
+  }, [])
+  
   const ref = useRef<null | HTMLDivElement>(null);
   const handleScroll = () => {
     ref.current?.scrollIntoView({behavior: 'smooth', block: 'start'});
@@ -75,13 +86,17 @@ export default function Home() {
       <PageContent>
         <Section>
           <SectionHeader>
+            <SlideLeft>
             <Header2>Property Highlights</Header2>
+            </SlideLeft>
+            <SlideRight>
             <HeaderDescContainer>
             <HorizontalLine></HorizontalLine>
-            <HeaderDescription className={styles.roboto}>
-                Lorem ipsum modulum cumulum gsaf u8o asdf wer naiuguh f adsfg;aerwgf aisudf bsajkh iuwe bkajlsdf uwioa nadkjfhaew afw vafsd 
-            </HeaderDescription>
+              <HeaderDescription className={styles.roboto}>
+                  Lorem ipsum modulum cumulum gsaf u8o asdf wer naiuguh f adsfg;aerwgf aisudf bsajkh iuwe bkajlsdf uwioa nadkjfhaew vafsd 
+              </HeaderDescription>
             </HeaderDescContainer>
+            </SlideRight>
           </SectionHeader>
           <SectionContent>
             <HighlightContainer>
@@ -121,13 +136,17 @@ export default function Home() {
         </Section>
         <Section>
           <SectionHeader>
-            <Header2>Kenzo Penthouse</Header2>
+            <SlideLeft>
+              <Header2>Kenzo Penthouse</Header2>
+            </SlideLeft>
+            <SlideRight>
             <HeaderDescContainer>
             <HorizontalLine></HorizontalLine>
             <HeaderDescription className={styles.roboto}>
-                Lorem ipsum modulum cumulum gsaf u8o asdf wer naiuguh f adsfg;aerwgf aisudf bsajkh iuwe bkajlsdf uwioa nadkjfhaew afw vafsd 
+                Lorem ipsum modulum cumulum gsaf u8o asdf wer naiuguh f adsfg;aerwgf aisudf bsajkh iuwe bkajlsdf uwioa nadkjfhaew af 
             </HeaderDescription>
             </HeaderDescContainer>
+            </SlideRight>
           </SectionHeader>
           <SectionContent>
             <PropertySection>
@@ -187,11 +206,17 @@ export default function Home() {
         </Section>
           <SectionContent>
             <NFTSection>
-              <SideImage>
-                <Image alt="background" layout='fill' objectFit='cover'  src={highlightsIcon}></Image> 
-              </SideImage>
+              <SlideLeft>
+                <SideImage>
+                  <Image alt="background" layout='fill' objectFit='cover'  src={highlightsIcon}></Image> 
+                </SideImage>
+              </SlideLeft>
               <div>
-                <NFTHeader>NFT Premium</NFTHeader>
+                {mobile ?
+                  <SlideLeft><NFTHeader>NFT Premium</NFTHeader></SlideLeft>
+                  :
+                  <NFTHeader>NFT Premium</NFTHeader>
+                }
                 <TwoColumns>
                   <NFTImageContainer>
                     <Image alt="background" layout='fill' objectFit='cover'  src={NFTImage}></Image> 
@@ -233,7 +258,9 @@ export default function Home() {
           <SectionContent>
             <TwoColumns>
               <div>
-                <Header2>Plan and<br/> Room Dimensions</Header2>
+                <SlideLeft>
+                  <Header2>Plan and<br/> Room Dimensions</Header2>
+                </SlideLeft>
                 <PlanDescription className={styles.roboto}>
                   Lorem ipsum modulum cumulum gsaf u8o asdf wer naiuguh f adsfg;aerwgf aisudf bsajkh iuwe bkajlsdf uwioa nadk.
                 </PlanDescription>
@@ -258,19 +285,21 @@ export default function Home() {
             </TwoColumns>
           </SectionContent>
           </Section>
-          <CTABackground>
-            <Image alt="background" layout='fill' objectFit='cover'  src={livingRoom}></Image> 
-            <CTAContainer>
-              <CTAText>
-                Buy Kenzo Penthouse with Premium NFT now!
-              </CTAText>
-              <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
-                <CTAButton>
-                  <b>Buy now</b>
-                </CTAButton>
-              </div>
-            </CTAContainer>
-          </CTABackground>
+          <Appearing>
+            <CTABackground>
+              <Image alt="background" layout='fill' objectFit='cover'  src={livingRoom}></Image> 
+              <CTAContainer>
+                <CTAText>
+                  Buy Kenzo Penthouse with Premium NFT now! 
+                </CTAText>
+                <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
+                  <CTAButton>
+                    <b>Buy now</b>
+                  </CTAButton>
+                </div>
+              </CTAContainer>
+            </CTABackground>
+          </Appearing>
           <div ref={ref}>
             <Footer />
           </div>
@@ -474,7 +503,7 @@ const HeaderDescription = styled.p`
       margin-top: 2vw;
       line-height: 1.6vw;
       color: rgba(255, 255, 255, 0.75);
-      width: 30vw;
+      width: 28vw;
       display: block;
     }
 `
@@ -567,7 +596,7 @@ const PropertyImage = styled.div`
     height: 70vw;
     margin-left: 5vw;
     @media only screen and (min-width: 768px) { 
-      margin-left: 20vw;
+      margin-left: 12vw;
       position: relative;
       border-radius: 10px;
       overflow: hidden;
