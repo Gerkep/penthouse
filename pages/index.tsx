@@ -206,9 +206,17 @@ export default function Home() {
                   </PdfContainer>
                 </Link>
               </div>
-              <PropertyImage>
-                <Image alt="background" layout='fill' objectFit='cover'  src={kenzoFire}></Image> 
-              </PropertyImage>
+              {mobile ?
+              <div style={{width: "100%", display: "flex", justifyContent: "center"}}>
+                <PropertyImage>
+                    <Image alt="background" layout='fill' objectFit='cover'  src={kenzoFire}></Image> 
+                </PropertyImage>     
+              </div>
+              :
+                <PropertyImage>
+                  <Image alt="background" layout='fill' objectFit='cover'  src={kenzoFire}></Image> 
+                </PropertyImage>             
+              }
             </PropertySection>
           </SectionContent>
         </Section>
@@ -260,7 +268,7 @@ export default function Home() {
           </SectionContent>
           <Section>
           <SectionContent>
-            <TwoColumns>
+            <PlanSection>
               <div>
                 {mobile ?
                   <Header2>Plan and<br/> Room Dimensions</Header2>            
@@ -290,7 +298,7 @@ export default function Home() {
               <PlanImageMobile>
                     <Image alt="background" layout='fill' objectFit='contain'  src={planImage}></Image> 
               </PlanImageMobile>
-            </TwoColumns>
+            </PlanSection>
           </SectionContent>
           </Section>
           <Appearing>
@@ -527,17 +535,17 @@ const SectionContent = styled.div`
 
 const HighlightContainer = styled.div`
     width: 80vw;
-    height: 90vw;
+    height: 110vw;
     margin-top: 10vw;
     position: relative;
     display: flex;
     justify-content: center;
     border-radius: 10px;
     align-items: end;
+    overflow: hidden;
     @media only screen and (min-width: 768px) { 
       width: 28vw;
       height: 30vw;
-      overflow: hidden;
       margin-top: 0;
       margin: 0 0.5vw 0 0.5vw;
     }
@@ -585,67 +593,72 @@ const HighlightDesc = styled.p`
 `
 
 const PropertySection = styled.div`
-    width: 100%;
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      ". .";
+  @media only screen and (min-width: 768px) { 
+      width: 100%;
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      grid-template-rows: 1fr; 
+      gap: 0px 0px; 
+      grid-template-areas: 
+        ". .";
+  }
 `
 
 const PropertyImage = styled.div`
-    position: absolute;
-    right: 0;
-    width: 40vw;
+    position: relative;
+    width: 60vw;
+    margin-top: 10vw;
     height: 70vw;
     margin-left: 5vw;
     border-radius: 10px;
+    overflow: hidden;
     @media only screen and (min-width: 768px) { 
-      margin-left: 12vw;
-      position: relative;
-      overflow: hidden;
+      margin: 0 0 0 12vw;
       width: 30vw;
       height: 35vw;
     }
 `
 
 const KenzoDescription = styled.p`
-    width: 45vw;
+    width: 100vw;
+    padding: 0 10vw 0 10vw;
+    text-align: center;
     color: white;
     line-height: 4vw;
     margin-bottom: 5vw;
     font-size: 3vw;
-    margin-left: 5vw;
     @media only screen and (min-width: 768px) { 
       margin-left: 0vw;
       margin-bottom: 5vw;
       width: 30vw;
       font-size: 1vw;
       line-height: 1.6vw;
+      padding: 0;
+      text-align: left;
     }
 `
 const KenzoProps = styled.div`
-    display: grid; 
-    margin-left: 5vw;
-    grid-template-columns: 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      ". ."
-      ". ."
-      ". ."; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
       @media only screen and (min-width: 768px) { 
-        margin-left: 0;
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          ". ."
+          ". ."
+          ". ."; 
       }
 `
 const Prop = styled.div`
     display: flex;
     align-items: center;
-    margin-bottom: 2vw;
-    font-size: 3vw;
+    margin: 2vw 4vw 2vw 4vw;
     @media only screen and (min-width: 768px) { 
       font-size: 1vw;
+      margin: 0 0 2vw 0;
     }
 `
 const PropImage = styled.div`
@@ -660,7 +673,7 @@ const PropImage = styled.div`
 const PropText = styled.p`
     color: white;
     margin-left: 3vw;
-    font-size: 2vw;
+    font-size: 3vw;
     @media only screen and (min-width: 768px) {;
       font-size: 1vw;
       margin-left: 1.5vw;
@@ -668,6 +681,7 @@ const PropText = styled.p`
 `
 
 const PdfContainer = styled.div`
+    margin: 0 auto;
     width: 30vw;
     background-color: #232323;
     display: flex;
@@ -675,12 +689,14 @@ const PdfContainer = styled.div`
     padding: 3vw 3vw 3vw 3vw;
     margin-top: 2vw;
     margin-left: 5vw;
+    display: none;
     cursor: pointer;
     border-radius: 5px;
     @media only screen and (min-width: 768px) { 
       padding: 1vw 1vw 1vw 1vw;
       width: 12vw;
       margin-left: 0;
+      display: block;
     }
 `
 const PdfText = styled.p`
@@ -707,13 +723,12 @@ const NFTSection = styled.div`
   }
 `
 const NFTProps = styled.div`
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr; 
-    grid-template-rows: 1fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-      ". . ."; 
+    display: flex;
+    justify-content: center;
+    width: 100%;
       @media only screen and (min-width: 768px) {
+        display: grid;
+        width: auto;
         grid-template-columns: 1fr 1fr; 
         grid-template-rows: 1fr 1fr 1fr; 
         grid-template-areas: 
@@ -730,13 +745,13 @@ const NFTProp = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 4vw;
   font-size: 3vw;
+  margin: 0 4vw 4vw 4vw;
   @media only screen and (min-width: 768px) {
     display: flex;
     align-items: center;
     justify-content: left;
-    margin-bottom: 2vw;
+    margin: 0 0 2vw 0;
     font-size: 1vw;
   }
 `
@@ -773,11 +788,9 @@ const NFTImageContainer = styled.div`
     margin-bottom: 10vw;
     border-radius: 10px;
     box-shadow: 1px 1px 30px rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
     @media only screen and (min-width: 768px) {
       box-shadow: none;
       border-radius: 0px;
-      overflow: hidden;
       width: 18vw;
       height: 18vw;
       font-size: 1vw;
@@ -827,6 +840,18 @@ const BenefitsImageMobile = styled.div`
   margin-top: 5vw;
   @media only screen and (min-width: 768px) {
     display: none;
+  }
+`
+const PlanSection = styled.div`
+  padding: 0;
+  @media only screen and (min-width: 768px) {
+    padding: 5vw 0 5vw 0;
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". ."; 
   }
 `
 const PlanDescription = styled.p`
@@ -901,10 +926,10 @@ const CTABackground = styled.div`
     align-items: center;
     justify-content: center;
     border-radius: 10px;
+    overflow: hidden;
     @media only screen and (min-width: 768px) {
       height: 24vw;
       margin-top: 5vw;
-      overflow: hidden;
     }
 `
 const CTAContainer = styled.div`
