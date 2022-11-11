@@ -681,6 +681,7 @@ const PropText = styled.p`
 
 const PdfContainer = styled.div`
     margin: 0 auto;
+    color: white;
     width: 30vw;
     background-color: #232323;
     display: flex;
@@ -816,6 +817,7 @@ const TwoColumns = styled.div`
 const NFTDescription = styled.p`
   width: 100vw;
   padding: 0 10vw 0 10vw;
+  color: white;
   text-align: center;
   font-size: 3vw;
   margin-bottom: 14vw;
@@ -876,6 +878,7 @@ const Dimensions = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     font-size: 3vw;
+    color: white;
     margin-top: 10vw;
     @media only screen and (min-width: 768px) {
       justify-content: start;
@@ -888,6 +891,7 @@ const RoomDimension = styled.p`
     letter-spacing: .1vw;
     margin-top: 5vw;
     font-size: 3vw;
+    color: white;
     margin-right: 2.5vw;
     @media only screen and (min-width: 768px) {
       margin-top: 1vw;
@@ -897,6 +901,7 @@ const RoomDimension = styled.p`
 const TotalDimension = styled.p`
     letter-spacing: .1vw;
     margin-top: 7vw;
+    color: white;
     margin-right: 2.5vw;
     @media only screen and (min-width: 768px) {
       margin-top: 2vw;
@@ -947,6 +952,7 @@ const CTAText = styled.h2`
     text-align: center;
     margin: 0 auto;
     margin-top: 7vw;
+    color: white;
     width: 80%;
     font-size: 5vw;
     @media only screen and (min-width: 768px) {

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import styles from '../styles/Home.module.css';
 import Loading from '../components/Loading';
+import NFTImage from "../public/img/kenzoNFT.jpg"
 
 export default function Home() {
 
@@ -32,7 +33,14 @@ export default function Home() {
       </Background>
       <Header onContactClick={handleScroll} onPromotionClick={() => setOpenPromotionModal(true)}/>
       <BuyContainer>
-
+        <FirstColumn>
+            <BuyHeader>Kenzo Penthouse</BuyHeader>
+        </FirstColumn>
+        <SecondColumn>
+            <NFTImageContainer>
+                <Image alt="background" layout='fill' objectFit='cover'  src={NFTImage}></Image> 
+            </NFTImageContainer>      
+        </SecondColumn>    
       </BuyContainer>
       </div>
     </>
@@ -49,10 +57,45 @@ const Background = styled.div`
 `
 
 const BuyContainer = styled.div`
-    width: 70vw;
-    height: 35vw;
-    background-color: black;
+    width: 75vw;
+    height: 40vw;
+    padding: 0 3vw 0 3vw;
+    background-color: rgba(0, 0, 0, 0.75);
     position: relative;
     margin: 0 auto;
-    margin-top: 15vw;
+    margin-top: 10vw;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". ."; 
+`
+
+const NFTImageContainer = styled.div`
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 35vw;
+    height: 35vw;
+`
+
+const SecondColumn = styled.div`
+    display: flex;
+    width: 100%;
+    heiight: 100%;
+    justify-content: end;
+    align-items: center;
+`
+
+const FirstColumn = styled.div`
+    padding: 3vw 0 3vw 0;
+`
+
+const BuyHeader = styled.div`
+    font-size: 3vw;
+    color: white;
 `
