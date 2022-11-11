@@ -698,7 +698,7 @@ const PdfContainer = styled.div`
       padding: 1vw 1vw 1vw 1vw;
       width: 12vw;
       margin-left: 0;
-      display: block;
+      display: flex;
     }
 `
 const PdfText = styled.p`
@@ -792,7 +792,6 @@ const NFTImageContainer = styled.div`
     box-shadow: 1px 1px 30px rgba(255, 255, 255, 0.5);
     @media only screen and (min-width: 768px) {
       box-shadow: none;
-      border-radius: 0px;
       width: 18vw;
       height: 18vw;
       font-size: 1vw;
@@ -867,7 +866,7 @@ const PlanDescription = styled.p`
     margin-bottom: 2vw;
     @media only screen and (min-width: 768px) {
       padding: 0;
-      width: 30vw;
+      width: 40vw;
       font-size: 1vw;
       text-align: left;
       margin-bottom: 0;
