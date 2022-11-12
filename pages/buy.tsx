@@ -12,7 +12,7 @@ import spaIcon from "../public/img/icons/spa.png";
 
 export default function Buy() {
   
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
   const ref = useRef<null | HTMLDivElement>(null);
   const handleScroll = () => {
     ref.current?.scrollIntoView({behavior: 'smooth', block: 'start'});
@@ -270,7 +270,7 @@ const MobileImage = styled.div`
 
 const CongratsContainer = styled.div`
     width: 95vw;
-    padding: 0 7vw 0 7vw;
+    padding: 14vw 7vw 20vw 7vw;
     background-color: rgba(0, 0, 0, 0.75);
     position: relative;
     margin: 0 auto;
@@ -304,13 +304,17 @@ const CongratsHeader = styled.h1`
     }
 `
 const CongratsImageContainer = styled.div`
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    width: 12vw;
-    height: 12vw;
-    margin-top: 3vw;
+    display: none;
+    @media only screen and (min-width: 768px) {
+      margin: 0 auto;
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      width: 12vw;
+      height: 12vw;
+      margin-top: 3vw;
+    }
 `
 
 const CongratsDesc = styled.p`
@@ -332,7 +336,7 @@ const ContactButton = styled.button`
     background-color: white;
     border: none;
     border-radius: 5px;
-    margin-top: 3vw;
+    margin-top: 10vw;
     cursor: pointer;
     font-size: 4vw;
     background-color: #e6be8a;
