@@ -587,6 +587,7 @@ const HighlightDescContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     padding: 5vw 0 5vw 0;
+    border-radius: 10px;
     justify-content: center;
     @media only screen and (min-width: 768px) { 
       width: 21vw;

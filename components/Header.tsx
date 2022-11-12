@@ -84,7 +84,7 @@ const HeaderContainer = styled.div`
 `
 
 const Logo = styled.div`
-    width: 55vw;
+    width: 42vw;
     height: 15vw;
     position: relative;
     @media only screen and (min-width: 768px) {
