@@ -96,7 +96,7 @@ export default function Home() {
             <HeaderDescContainer>
             <HorizontalLine></HorizontalLine>
               <HeaderDescription className={styles.roboto}>
-                  Lorem ipsum modulum cumulum gsaf u8o asdf wer naiuguh f adsfg;aerwgf aisudf bsajkh iuwe bkajlsdf uwioa nadkjfhaew vafsd 
+                "Kenzo penthouse is a complete, luxurious real estate created with oriental vibe in between of Berlin and Warsaw."
               </HeaderDescription>
             </HeaderDescContainer>
             </SlideRight>
@@ -109,7 +109,7 @@ export default function Home() {
                   Amazing Views
                 </HighlightDescHeader>
                 <HighlightDesc>
-                   Lorem ipsum modulum aisudf bsajkh iuwe bkajlsdf uwioa nadkjfhaew afw vafsd fds dsafadg
+                  Apartment views overlook City Park Hotel & Residence that harmoniously combine historical value with contemporary design.
                 </HighlightDesc>
               </HighlightDescContainer>
             </HighlightContainer>
@@ -120,7 +120,7 @@ export default function Home() {
                   Great Location
                 </HighlightDescHeader>
                 <HighlightDesc>
-                   Lorem ipsum modulum aisudf bsajkh iuwe bkajlsdf uwioa nadkjfhaew afw vafsd fds dsafadg
+                  Penthouse is located in spectacular, quiet space near the city center, which allows you to relax and experience the extraordinary atmosphere of Poznań.
                 </HighlightDesc>
               </HighlightDescContainer>
             </HighlightMidContainer>
@@ -131,7 +131,7 @@ export default function Home() {
                   Luxurious Neighbourhood
                 </HighlightDescHeader>
                 <HighlightDesc>
-                   Lorem ipsum modulum aisudf bsajkh iuwe bkajlsdf uwioa nadkjfhaew afw vafsd fds dsafadg
+                  Kenzo; as it is situated in a guarded, private housing estate, is surrounded by the most luxurious restaurants and whisky bars in the city of Poznań.
                 </HighlightDesc>
               </HighlightDescContainer>
             </HighlightContainer>
@@ -140,17 +140,17 @@ export default function Home() {
         <Section>
           <SectionHeader>
             {mobile ?
-              <Header2>KenzoPenthouse</Header2>            
+              <Header2>Kenzo Penthouse</Header2>            
             :
               <SlideLeft>
-              <Header2>KenzoPenthouse</Header2>
+              <Header2>Kenzo Penthouse</Header2>
               </SlideLeft>            
             }
             <SlideRight>
             <HeaderDescContainer>
             <HorizontalLine></HorizontalLine>
             <HeaderDescription className={styles.roboto}>
-                Lorem ipsum modulum cumulum gsaf u8o asdf wer naiuguh f adsfg;aerwgf aisudf bsajkh iuwe bkajlsdf uwioa nadkjfhaew af 
+              “Designed by icons of interior design and architecture & made from luxurious materials combined with innovative solutions.”
             </HeaderDescription>
             </HeaderDescContainer>
             </SlideRight>
@@ -159,8 +159,9 @@ export default function Home() {
             <PropertySection>
               <div>
                 <KenzoDescription className={styles.roboto}>
-                  Lorem ipsum modulum cumulum gsaf u8o asdf wer naiuguh f adsfg;aerwgf aisudf bsajkh iuwe bkajlsdf uwioa nadkjfhaew afw 
-                  vafsd more text here sdfa ashgr sdghlw grteh wel aiuwe gadflh agregerth lerhguo rghiersu berfg dfgsrhs.
+                Kenzo is one of the most stunning Penthouses in Europe. Part of Japan culture based in Poznan just between two business capital cities of Berlin and Warsaw. 
+                The interior is breathtaking. The penthouse, located in the tower of City Park Poznań apartment building, was inspired by two samurai swords. 
+                Kenzo's walls were tiled with Brazilian slate. They give the interior a raw, masculine character and bring to mind a mystical cave carved in rock...
                 </KenzoDescription>
                 <KenzoProps className={styles.roboto}>
                   <Prop>
@@ -235,7 +236,7 @@ export default function Home() {
                   <div style={{paddingTop: "2vw"}}>
                     <HorizontalLine></HorizontalLine>
                     <NFTDescription className={styles.roboto}>
-                      Lorem ipsum modulum cumulum gsaf u8o asdf wer naiuguh f adsfg;aerwgf aisudf bsajkh iuwe bkajlsdf uwioa nadkjfhaew afw vafsd more text here sdfa ashgr sdghlw.
+                      Kenzo combines premium real estate with premium NFT, it allows to enjoy the full potential of City Park Hotel & Residence by free NFT.
                     </NFTDescription>
                     <NFTProps className={styles.roboto}>
                       <NFTProp>
@@ -277,18 +278,18 @@ export default function Home() {
                   </SlideLeft>            
                 }
                 <PlanDescription className={styles.roboto}>
-                  Lorem ipsum modulum cumulum gsaf u8o asdf wer naiuguh f adsfg;aerwgf aisudf bsajkh iuwe bkajlsdf uwioa nadk.
+                  Apartment 313 can be described as an ownership of a part of the City Park palace, as you are able to have your own tower.
                 </PlanDescription>
                 <Dimensions>
                   <RoomDimension className={styles.roboto}>Adjoining room  ..........  26,24m<sup>2</sup></RoomDimension>
                   <RoomDimension className={styles.roboto}>Terrace  ...................... 83,40m<sup>2</sup></RoomDimension>
-                  <RoomDimension className={styles.roboto}>Winter garden  ............  26,24m<sup>2</sup></RoomDimension>
+                  <RoomDimension className={styles.roboto}>Winter garden  ............  21,67m<sup>2</sup></RoomDimension>
                   <RoomDimension className={styles.roboto}>Room  ........................  48,71m<sup>2</sup></RoomDimension>
                   <RoomDimension className={styles.roboto}>Room  ......................... 31,97m<sup>2</sup></RoomDimension>
                   <RoomDimension className={styles.roboto}>Bathroom  ....................  9,52m<sup>2</sup></RoomDimension>
-                  <RoomDimension className={styles.roboto}>Room with kitchen  ....  26,24m<sup>2</sup></RoomDimension>
+                  <RoomDimension className={styles.roboto}>Room with kitchen  ....  82,17m<sup>2</sup></RoomDimension>
                   <RoomDimension className={styles.roboto}>Winter garden  ............  21,82m<sup>2</sup></RoomDimension>
-                  <TotalDimension className={styles.roboto}><b>Total interior space</b>  ............  <b>242,10m<sup>2</sup></b></TotalDimension>
+                  <TotalDimension className={styles.roboto}><b>Total space</b>  ............  <b>325,59m<sup>2</sup></b></TotalDimension>
                 </Dimensions>
               </div>
               <SideImage>
@@ -523,7 +524,7 @@ const HeaderDescription = styled.p`
     @media only screen and (min-width: 768px) {
       margin-left: 3vw;
       font-size: 1vw;
-      margin-top: 2vw;
+      margin-top: 1.8vw;
       line-height: 1.6vw;
       color: rgba(255, 255, 255, 0.75);
       width: 28vw;

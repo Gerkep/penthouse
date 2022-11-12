@@ -37,9 +37,11 @@ const Header = ({onPromotionClick, onContactClick}: any) => {
 
     return (
         <HeaderContainer>
+            <Link href="/">
             <Logo>
                 <Image alt="background" layout='fill' objectFit='contain'  src={konkretLogo}></Image> 
             </Logo>
+            </Link>
             <Navbar>
                 <Link href="https://hammerhead-doll-50e.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc"><NavbarLink className={styles.roboto}>Learn more</NavbarLink></Link>
                 <NavbarLink onClick={onContactClick} className={styles.roboto}>Contact us</NavbarLink>
@@ -87,6 +89,7 @@ const Logo = styled.div`
     width: 42vw;
     height: 15vw;
     position: relative;
+    cursor: pointer;
     @media only screen and (min-width: 768px) {
         width: 20vw;
         height: 4.5vw;
