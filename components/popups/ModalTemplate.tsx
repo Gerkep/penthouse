@@ -35,10 +35,10 @@ const ModalContainer = styled.div`
     background-color: black;
     cursor: auto;
     border-radius: 10px;
-    padding: 10vw;
+    padding: 15vw 10vw 15vw 10vw;
     overflow: scroll;
     @media only screen and (min-width: 768px) {
         width: 45vw;
-        padding: 1vw 3vw 3vw 3vw;
+        padding: 4vw 3vw 4vw 3vw;
     }
 `

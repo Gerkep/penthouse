@@ -15,8 +15,10 @@ const Title = styled.div`
     text-align: center;
     margin-bottom: 5vw;
     color: white;
+    letter-spacing: .14rem;
     @media only screen and (min-width: 768px) {
         font-size: 3vw;
+        letter-spacing: .2rem;
         margin-bottom: 1vw;
     }
 `

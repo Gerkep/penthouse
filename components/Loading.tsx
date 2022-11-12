@@ -32,6 +32,14 @@ export default function Loading() {
     </div>
     );
 }
+
+export function SmallSpinner() {
+    return  (
+        <div>
+            <SpinnerBlack></SpinnerBlack>
+        </div>
+    )
+}
 const spinner = keyframes`
     100% {
         transform: rotate(1turn);
@@ -59,4 +67,14 @@ const Spinner = styled.div`
             conic-gradient(#0000 30%,#e6be8a);
         -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
         animation: ${spinner} 1s infinite linear;
+`
+
+const SpinnerBlack = styled.div`
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side,#000000 94%,#0000) top/0.1rem 0.1rem no-repeat,
+        conic-gradient(#0000 30%,#000000);
+    -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 0.2rem),#000 0);
+    animation: ${spinner}    1s infinite linear;
 `

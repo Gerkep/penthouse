@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.9.1",
+    "@mantine/core": "^5.7.2",
+    "@mantine/notifications": "^5.7.2",
     "@next/font": "^13.0.1",
     "@types/node": "18.11.8",
     "@types/react": "18.0.24",

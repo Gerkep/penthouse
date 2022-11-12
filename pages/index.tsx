@@ -35,8 +35,6 @@ import yeppLogo from "../public/img/icons/yepp.png";
 
 export default function Home() {
 
-  const [openPromotionModal, setOpenPromotionModal] = useState(false);
-
   const [mobile, setMobile] = useState(false);
 
   useEffect(() => {
@@ -55,9 +53,9 @@ export default function Home() {
       <Loading />
       <div style={{position: "fixed", top: "0", left: "0", width: "100%", zIndex: "0"}}>
       <Background>
-          <Image alt="background" layout='fill' objectFit='cover'  src={kenzoBackground}></Image> 
+          <Image alt="background" layout='fill' objectFit='cover'  src={livingRoom}></Image> 
       </Background>
-      <Header onContactClick={handleScroll} onPromotionClick={() => setOpenPromotionModal(true)}/>
+      <Header onContactClick={handleScroll} />
       <TitleSection>
         <PreTitle className={styles.roboto}>City Park presents:</PreTitle>
         <MainTitle><LightText>Kenzo</LightText> Penthouse</MainTitle>
@@ -65,7 +63,7 @@ export default function Home() {
       </TitleSection>
       <ButtonsSection>
         <Link href="https://keznopetnhouse-learnmore.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc"><MainBtn style={{backgroundColor: "black"}}><b>Learn more</b></MainBtn></Link>
-        <Link href="/buy"><MainBtn style={{backgroundColor: "white", color: "black"}}><b>Buy now</b></MainBtn></Link>
+        <Link href="/buy"><MainBtn style={{backgroundColor: "#e6be8a", color: "black"}}><b>Buy now</b></MainBtn></Link>
       </ButtonsSection>
       <MintContainer>
         <MintTitle>Buy Kenzo today</MintTitle>
@@ -404,10 +402,10 @@ const MainBtn = styled.button`
   margin: 10vw 5vw 10vw 0;
   font-size: 3vw;
   border-radius: 5px;
-  color: white;
   border: none;
   cursor: pointer;
   transition: ease-in 0.2s;
+  color: white;
   &:hover{
     transform: scale(0.95);
   }

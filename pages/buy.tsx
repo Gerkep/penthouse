@@ -176,6 +176,7 @@ const BuyHeader = styled.h1`
     @media only screen and (min-width: 768px) {
         font-size: 3vw;
         margin-top: 0;
+        letter-spacing: .15rem;
     }
 `
 
