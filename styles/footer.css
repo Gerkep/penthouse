@@ -49,6 +49,7 @@
   font-size: 2.5vw;
   width: 100%;
   margin: 2vw 0 0 0;
+  cursor: pointer;
 }
 .contact-illustration {
   height: 5vw;
@@ -131,7 +132,7 @@
     width: 100%;
     color: rgba(255, 255, 255, 0.725);
     font-size: 1vw;
-    margin: 0.5vw 0 0.5vw 0;
+    margin: 1.5vw 0 1.5vw 0;
   }
   .contact-illustration {
     height: 2vw;

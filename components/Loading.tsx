@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export default function Loading() {
     const router = useRouter();
@@ -32,6 +32,11 @@ export default function Loading() {
     </div>
     );
 }
+const spinner = keyframes`
+    100% {
+        transform: rotate(1turn);
+    }
+`
 
 const LoadingContainer = styled.div`
     top: 0;
@@ -50,8 +55,8 @@ const Spinner = styled.div`
         width: 56px;
         height: 56px;
         border-radius: 50%;
-        background: radial-gradient(farthest-side,#ffffff 94%,#0000) top/9px 9px no-repeat,
-            conic-gradient(#0000 30%,#ffffff);
+        background: radial-gradient(farthest-side,#e6be8a 94%,#0000) top/9px 9px no-repeat,
+            conic-gradient(#0000 30%,#e6be8a);
         -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 9px),#000 0);
-        animation: spinner-c7wet2 1s infinite linear;
+        animation: ${spinner} 1s infinite linear;
 `

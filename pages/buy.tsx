@@ -217,6 +217,7 @@ const BuyButton = styled.button`
     margin-top: 3vw;
     cursor: pointer;
     font-size: 4vw;
+    background-color: #e6be8a;
     @media only screen and (min-width: 768px) {
         padding: 1vw 6vw 1vw 6vw;
         font-size: 1vw;

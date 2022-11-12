@@ -113,7 +113,7 @@ export default function Home() {
                 </HighlightDesc>
               </HighlightDescContainer>
             </HighlightContainer>
-            <HighlightContainer>
+            <HighlightMidContainer style={{zIndex: "100"}}>
               <Image alt="background" layout='fill' objectFit='cover'  src={locationImage}></Image> 
               <HighlightDescContainer className={styles.roboto}>
                 <HighlightDescHeader>
@@ -123,7 +123,7 @@ export default function Home() {
                    Lorem ipsum modulum aisudf bsajkh iuwe bkajlsdf uwioa nadkjfhaew afw vafsd fds dsafadg
                 </HighlightDesc>
               </HighlightDescContainer>
-            </HighlightContainer>
+            </HighlightMidContainer>
             <HighlightContainer>
               <Image alt="background" layout='fill' objectFit='cover'  src={neighbourhoodImage}></Image> 
               <HighlightDescContainer className={styles.roboto}>
@@ -400,6 +400,10 @@ const MainBtn = styled.button`
   color: white;
   border: none;
   cursor: pointer;
+  transition: ease-in 0.2s;
+  &:hover{
+    transform: scale(0.95);
+  }
 `
 
 const AboutContainer = styled.div`
@@ -461,6 +465,11 @@ const MintButton = styled.button`
     cursor: pointer;
     margin-top: 2.5vw;
     margin-left: 15vw;
+    transition: ease-in 0.2s;
+    background-color: #e6be8a;
+    &:hover{
+      transform: scale(0.95);
+    }
 `
 const PageContent = styled.div`
     z-index: 100;
@@ -548,7 +557,25 @@ const HighlightContainer = styled.div`
       width: 28vw;
       height: 30vw;
       margin-top: 0;
-      margin: 0 0.5vw 0 0.5vw;
+      margin: 2vw 0.5vw 0 0.5vw;
+    }
+`
+const HighlightMidContainer = styled.div`
+    width: 80vw;
+    height: 110vw;
+    margin-top: 10vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    align-items: end;
+    overflow: hidden;
+    @media only screen and (min-width: 768px) { 
+      width: 28vw;
+      height: 30vw;
+      margin: 2.5vw 0.5vw 0 0.5vw;
+      transform: scale(1.1);
+      box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.75);
     }
 `
 
@@ -694,6 +721,10 @@ const PdfContainer = styled.div`
     display: none;
     cursor: pointer;
     border-radius: 5px;
+    transition: ease-in 0.2s;
+    &:hover{
+      transform: scale(0.95);
+    }
     @media only screen and (min-width: 768px) { 
       padding: 1vw 1vw 1vw 1vw;
       width: 12vw;
@@ -972,6 +1003,11 @@ const CTAButton = styled.button`
     margin-top: 5vw;
     font-size: 3vw;
     cursor: pointer;
+    transition: ease-in 0.2s;
+    background-color: #e6be8a;
+    &:hover{
+      transform: scale(0.95);
+    }
     @media only screen and (min-width: 768px) {
       margin-top: 2vw;
       font-size: 1vw;
