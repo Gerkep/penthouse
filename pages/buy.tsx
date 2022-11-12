@@ -9,12 +9,14 @@ import NFTImage from "../public/img/kenzoNFT.jpg"
 import cutleryIcon from "../public/img/icons/cutlery.png";
 import swimmingpoolIcon from "../public/img/icons/swimmingpool.png";
 import spaIcon from "../public/img/icons/spa.png";
-import { IoLockClosed } from "react-icons/io5";
+import { IoLockClosed, IoMail } from "react-icons/io5";
+import ContactModal from '../components/popups/Contact';
 
 export default function Buy() {
   
   const [step, setStep] = useState(1);
   const [displayInfo, setDisplayInfo] = useState(false);
+  const [openContactModal, setOpenContactModal] = useState(false);
   const ref = useRef<null | HTMLDivElement>(null);
   const handleScroll = () => {
     ref.current?.scrollIntoView({behavior: 'smooth', block: 'start'});
@@ -27,6 +29,7 @@ export default function Buy() {
   return (
     <>
       <Loading />
+      {openContactModal && <ContactModal onClose={() => setOpenContactModal(false)}/>}
       <div style={{position: "fixed", top: "0", left: "0", width: "100%", zIndex: "0"}}>
       <Background>
           <Image alt="background" layout='fill' objectFit='cover'  src={kenzoBackground}></Image> 
@@ -42,7 +45,7 @@ export default function Buy() {
                     </MobileImage> 
                     <BuyHeader>Kenzo Penthouse</BuyHeader>
                     <Description className={styles.roboto}>
-                        Lorem ipsum modulum cumulum gsaf u8o asdf wer naiuguh f adsfg;aerwgf aisudf bsajkh iuwe bkajlsdf uwioa nadkjfhaew afw vafsd more text here sdfa ashgr sdghlw.
+                    In order to buy the Kenzo property, accordingly to Polish law you are required to follow particular steps. For more information contact us by an email.
                     </Description>
                     <NFTProps className={styles.roboto}>
                               <NFTProp>
@@ -65,7 +68,10 @@ export default function Buy() {
                               </NFTProp>
                     </NFTProps>
                     <Total className={styles.roboto}>Total: <b>1696Ξ</b></Total>
-                    <BuyButton onClick={() => setDisplayInfo(!displayInfo)} onMouseOver={() => setDisplayInfo(true)} onMouseLeave={() => setDisplayInfo(false)}><IoLockClosed style={{marginRight: "0.5vw"}}/><b>Buy now</b></BuyButton>
+                    <Buttons>
+                      <BuyButton onClick={() => setDisplayInfo(!displayInfo)} onMouseOver={() => setDisplayInfo(true)} onMouseLeave={() => setDisplayInfo(false)}><IoLockClosed style={{marginRight: "0.5vw"}}/><b>Buy now</b></BuyButton>
+                      <MailButton onClick={() => setOpenContactModal(true)}><IoMail /></MailButton>
+                    </Buttons>
                     {displayInfo && <Info className={styles.roboto}>Contact us and we will send you an email with steps required to buy this property.</Info>}
                     <Consent className={styles.roboto}>By buying I agree with <b>terms & conditions</b></Consent>
                 </FirstColumn>
@@ -368,5 +374,39 @@ const Info = styled.p`
       border-top-left-radius: 0px;
       width: 25vw;
       padding: 1.5vw;
+    }
+`
+
+const MailButton = styled.button`
+    margin: 0 auto;
+    padding: 4vw 25vw 4vw 25vw;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 3vw;
+    font-size: 5vw;
+    background-color: #e6be8a;
+    display: flex;
+    align-items: center;
+    transition: ease-in 0.2s;
+    &:hover{
+      transform: scale(0.95);
+    }
+    @media only screen and (min-width: 768px) {
+        padding: 1vw 3vw 1vw 3vw;
+        font-size: 1vw;
+        margin: 1vw 0 0 2vw;
+    }
+`
+
+const Buttons = styled.div`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @media only screen and (min-width: 768px) {
+      justify-content: start;
     }
 `
