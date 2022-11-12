@@ -9,10 +9,12 @@ import NFTImage from "../public/img/kenzoNFT.jpg"
 import cutleryIcon from "../public/img/icons/cutlery.png";
 import swimmingpoolIcon from "../public/img/icons/swimmingpool.png";
 import spaIcon from "../public/img/icons/spa.png";
+import { IoLockClosed } from "react-icons/io5";
 
 export default function Buy() {
   
   const [step, setStep] = useState(1);
+  const [displayInfo, setDisplayInfo] = useState(false);
   const ref = useRef<null | HTMLDivElement>(null);
   const handleScroll = () => {
     ref.current?.scrollIntoView({behavior: 'smooth', block: 'start'});
@@ -63,7 +65,8 @@ export default function Buy() {
                               </NFTProp>
                     </NFTProps>
                     <Total className={styles.roboto}>Total: <b>1696Ξ</b></Total>
-                    <BuyButton onClick={() => buy()}><b>Buy now</b></BuyButton>
+                    <BuyButton onClick={() => setDisplayInfo(!displayInfo)} onMouseOver={() => setDisplayInfo(true)} onMouseLeave={() => setDisplayInfo(false)}><IoLockClosed style={{marginRight: "0.5vw"}}/><b>Buy now</b></BuyButton>
+                    {displayInfo && <Info className={styles.roboto}>Contact us and we will send you an email with steps required to buy this property.</Info>}
                     <Consent className={styles.roboto}>By buying I agree with <b>terms & conditions</b></Consent>
                 </FirstColumn>
                 <SecondColumn>
@@ -236,14 +239,15 @@ const Total = styled.p`
 
 const BuyButton = styled.button`
     padding: 4vw 25vw 4vw 25vw;
-    color: black;
+    color: #e6be8a;
     background-color: white;
     border: none;
     border-radius: 5px;
     margin-top: 3vw;
-    cursor: pointer;
     font-size: 4vw;
-    background-color: #e6be8a;
+    background-color: #232323;
+    display: flex;
+    align-items: center;
     @media only screen and (min-width: 768px) {
         padding: 1vw 6vw 1vw 6vw;
         font-size: 1vw;
@@ -344,5 +348,25 @@ const ContactButton = styled.button`
         padding: 1vw 6vw 1vw 6vw;
         font-size: 1vw;
         margin-top: 3vw;
+    }
+`
+
+const Info = styled.p`
+    position: absolute;
+    margin-top: 1vw;
+    background-color: #e6be8a;
+    color: black;
+    width: 70vw;
+    padding: 5vw;
+    font-size: 3vw;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    @media only screen and (min-width: 768px) {
+      font-size: 1vw;
+      border-top-left-radius: 0px;
+      width: 25vw;
+      padding: 1.5vw;
     }
 `

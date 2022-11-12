@@ -31,6 +31,7 @@ import SlideLeft from "../components/animations/SlideLeft";
 import SlideRight from "../components/animations/SlideRight";
 import Appearing from "../components/animations/Appearing";
 import Loading from '../components/Loading';
+import yeppLogo from "../public/img/icons/yepp.png";
 
 export default function Home() {
 
@@ -63,14 +64,19 @@ export default function Home() {
         <MainDescription className={styles.roboto}>Luxurious penthouse located in heart of Poznań backed by blockchain technology.</MainDescription>
       </TitleSection>
       <ButtonsSection>
-        <Link href="https://kenzopenthouse.notion.site/NFT-know-how-5174c407208344b193f834d159bda840"><MainBtn style={{backgroundColor: "black"}}>Learn more</MainBtn></Link>
+        <Link href="https://kenzopenthouse.notion.site/NFT-know-how-5174c407208344b193f834d159bda840"><MainBtn style={{backgroundColor: "black"}}><b>Learn more</b></MainBtn></Link>
         <Link href="/buy"><MainBtn style={{backgroundColor: "white", color: "black"}}><b>Buy now</b></MainBtn></Link>
       </ButtonsSection>
       <MintContainer>
         <MintTitle>Buy Kenzo today</MintTitle>
         <MintDescription className={styles.roboto}>The most luxurious penthouse listed with NFT ever. Pay in crypto and get the keys ASAP.</MintDescription>
-        <Link href="/buy"><MintButton><b>Buy now</b></MintButton></Link>
+        <Link href="/buy"><MintButton>Buy now</MintButton></Link>
       </MintContainer>
+      <Link href="https://www.yeppstudios.com">
+        <YeppContainer className={styles.roboto}>
+          <b>Powered by</b> <YeppLogo><Image alt="background" layout='fill' objectFit='contain'  src={yeppLogo}></Image> </YeppLogo>
+        </YeppContainer>
+      </Link>
       </div>
       <AboutContainer>
         <IoIosPin style={{width: "1.5vw", height: "1.5vw", marginLeft: "2vw"}}></IoIosPin>
@@ -340,7 +346,7 @@ const TitleSection = styled.div`
   margin-top: 35vw;
   padding: 12vw 7vw 12vw 7vw;
   @media only screen and (min-width: 768px) {
-    margin-top: 11vw;
+    margin-top: 10vw;
     padding: 4vw 7vw 4vw 2vw;
     width: 50%;
     margin-left: 4vw;
@@ -441,7 +447,41 @@ const MintContainer = styled.div`
       padding: 2vw;
     }
 `
-
+const YeppContainer = styled.div`
+    margin: 0 auto;
+    width: 85%;
+    background-color: black;
+    padding: 4vw 8vw 4vw 8vw;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease-in 0.2s;
+    color: white;
+    &:hover{
+      transform: scale(0.95);
+    }
+    @media only screen and (min-width: 768px) {
+      position: absolute;
+      width: auto;
+      top: 90vh;
+      right: 2vw;
+      padding: 1vw 2vw 1vw 2vw;
+    }
+`
+const YeppLogo = styled.div`
+    position: relative;
+    width: 17vw;
+    height: 7vw;
+    margin-left: 2vw;
+    @media only screen and (min-width: 768px) {
+      margin-left: 1vw;
+      width: 5vw;
+      height: 2vw;
+    }
+`
 const MintTitle = styled.h2`
   font-size: 2.5vw;
   color: white;

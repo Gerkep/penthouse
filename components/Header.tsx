@@ -45,7 +45,7 @@ const Header = ({onPromotionClick, onContactClick}: any) => {
             <Navbar>
                 <Link href="https://kenzopenthouse.notion.site/NFT-know-how-5174c407208344b193f834d159bda840"><NavbarLink className={styles.roboto}>Learn more</NavbarLink></Link>
                 <NavbarLink onClick={onContactClick} className={styles.roboto}>Contact us</NavbarLink>
-                <Link href="/buy"><NavbarButton onClick={onPromotionClick}><b>Buy now</b></NavbarButton></Link>
+                <Link href="/buy"><NavbarButton onClick={onPromotionClick}>Buy now</NavbarButton></Link>
                 <div onClick={clickHamburger} className="hamburger-btn" id="hamburger-btn">
                 <div className="hamburger"></div>
                 </div>
