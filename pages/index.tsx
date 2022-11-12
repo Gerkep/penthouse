@@ -61,15 +61,15 @@ export default function Home() {
       <TitleSection>
         <PreTitle className={styles.roboto}>City Park presents:</PreTitle>
         <MainTitle><LightText>Kenzo</LightText> Penthouse</MainTitle>
-        <MainDescription className={styles.roboto}>Luxurious penthouse located in heart of Poznań backed by blockchain technology.</MainDescription>
+        <MainDescription className={styles.roboto}>Premium penthouse located in heart of Poznań backed by blockchain technology.</MainDescription>
       </TitleSection>
       <ButtonsSection>
-        <Link href="https://kenzopenthouse.notion.site/NFT-know-how-5174c407208344b193f834d159bda840"><MainBtn style={{backgroundColor: "black"}}><b>Learn more</b></MainBtn></Link>
+        <Link href="https://keznopetnhouse-learnmore.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc"><MainBtn style={{backgroundColor: "black"}}><b>Learn more</b></MainBtn></Link>
         <Link href="/buy"><MainBtn style={{backgroundColor: "white", color: "black"}}><b>Buy now</b></MainBtn></Link>
       </ButtonsSection>
       <MintContainer>
         <MintTitle>Buy Kenzo today</MintTitle>
-        <MintDescription className={styles.roboto}>The most luxurious penthouse listed with NFT ever. Pay in crypto and get the keys ASAP.</MintDescription>
+        <MintDescription className={styles.roboto}>The most luxurious penthouse listed with NFT on European market. Pay in crypto, get the keys and take pleasure from your new real estate.</MintDescription>
         <Link href="/buy"><MintButton>Buy now</MintButton></Link>
       </MintContainer>
       <Link href="https://www.yeppstudios.com">
@@ -201,7 +201,7 @@ export default function Home() {
                     <PropText>2616 sq.ft interior</PropText>
                   </Prop>
                 </KenzoProps>
-                <Link href="https://kenzopenthouse.notion.site/NFT-know-how-5174c407208344b193f834d159bda840">
+                <Link href="https://keznopetnhouse-learnmore.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc">
                   <PdfContainer>
                     <PropImage>
                       <Image alt="background" layout='fill' objectFit='contain'  src={pdfIcon}></Image> 
@@ -504,7 +504,7 @@ const MintButton = styled.button`
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    margin-top: 2.5vw;
+    margin-top: 2vw;
     margin-left: 15vw;
     transition: ease-in 0.2s;
     background-color: #e6be8a;
