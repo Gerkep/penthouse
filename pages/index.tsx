@@ -63,7 +63,7 @@ export default function Home() {
         <MainDescription className={styles.roboto}>Luxurious penthouse located in heart of Poznań backed by blockchain technology.</MainDescription>
       </TitleSection>
       <ButtonsSection>
-        <Link href="https://hammerhead-doll-50e.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc"><MainBtn style={{backgroundColor: "black"}}>Learn more</MainBtn></Link>
+        <Link href="https://kenzopenthouse.notion.site/NFT-know-how-5174c407208344b193f834d159bda840"><MainBtn style={{backgroundColor: "black"}}>Learn more</MainBtn></Link>
         <Link href="/buy"><MainBtn style={{backgroundColor: "white", color: "black"}}><b>Buy now</b></MainBtn></Link>
       </ButtonsSection>
       <MintContainer>
@@ -195,7 +195,7 @@ export default function Home() {
                     <PropText>2616 sq.ft interior</PropText>
                   </Prop>
                 </KenzoProps>
-                <Link href="https://hammerhead-doll-50e.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc">
+                <Link href="https://kenzopenthouse.notion.site/NFT-know-how-5174c407208344b193f834d159bda840">
                   <PdfContainer>
                     <PropImage>
                       <Image alt="background" layout='fill' objectFit='contain'  src={pdfIcon}></Image> 

@@ -43,7 +43,7 @@ const Header = ({onPromotionClick, onContactClick}: any) => {
             </Logo>
             </Link>
             <Navbar>
-                <Link href="https://hammerhead-doll-50e.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc"><NavbarLink className={styles.roboto}>Learn more</NavbarLink></Link>
+                <Link href="https://kenzopenthouse.notion.site/NFT-know-how-5174c407208344b193f834d159bda840"><NavbarLink className={styles.roboto}>Learn more</NavbarLink></Link>
                 <NavbarLink onClick={onContactClick} className={styles.roboto}>Contact us</NavbarLink>
                 <Link href="/buy"><NavbarButton onClick={onPromotionClick}><b>Buy now</b></NavbarButton></Link>
                 <div onClick={clickHamburger} className="hamburger-btn" id="hamburger-btn">
@@ -51,7 +51,7 @@ const Header = ({onPromotionClick, onContactClick}: any) => {
                 </div>
                 <div className="menu" id="menu">
                 <div className="mobile-menu-items">
-                    <a href="https://hammerhead-doll-50e.notion.site/Penthouse-Kenzo-bb570472844e49a5b3b92b7721af3edc" className="mobile-menu-link">Learn more</a>
+                    <a href="https://kenzopenthouse.notion.site/NFT-know-how-5174c407208344b193f834d159bda840" className="mobile-menu-link">Learn more</a>
                     <p onClick={() => contactClickHandle()} className="mobile-menu-link" id="link">
                         <b>Contact us</b>
                     </p>
