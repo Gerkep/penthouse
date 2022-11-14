@@ -11,12 +11,14 @@ import swimmingpoolIcon from "../public/img/icons/swimmingpool.png";
 import spaIcon from "../public/img/icons/spa.png";
 import { IoLockClosed, IoMail } from "react-icons/io5";
 import ContactModal from '../components/popups/Contact';
+import axios from 'axios';
 
 export default function Buy() {
   
   const [step, setStep] = useState(1);
   const [displayInfo, setDisplayInfo] = useState(false);
   const [openContactModal, setOpenContactModal] = useState(false);
+  const [ethPrice, setEthPrice] = useState(0);
   const ref = useRef<null | HTMLDivElement>(null);
   const handleScroll = () => {
     ref.current?.scrollIntoView({behavior: 'smooth', block: 'start'});
@@ -25,6 +27,19 @@ export default function Buy() {
   const buy = () => {
     setStep(2);
   }
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false"
+      )
+      .then((res) => {
+        let price = 2680000/res.data[1].current_price;
+        setEthPrice(Number(price.toFixed(4)))
+
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <>
@@ -67,7 +82,7 @@ export default function Buy() {
                                 <PropText>Restaurant</PropText>
                               </NFTProp>
                     </NFTProps>
-                    <Total className={styles.roboto}>Total: <b>1696Ξ</b></Total>
+                    <Total className={styles.roboto}>Total: <b>{ethPrice}Ξ</b></Total>
                     <Buttons>
                       <BuyButton onClick={() => setDisplayInfo(!displayInfo)} onMouseOver={() => setDisplayInfo(true)} onMouseLeave={() => setDisplayInfo(false)}><IoLockClosed style={{marginRight: "0.5vw"}}/><b>Buy now</b></BuyButton>
                       <MailButton onClick={() => setOpenContactModal(true)}><IoMail /></MailButton>
