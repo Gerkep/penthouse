@@ -307,7 +307,7 @@ export default function Home() {
           </Section>
           <Appearing>
             <CTABackground>
-              <Image alt="background" layout='fill' objectFit='cover'  src={livingRoom}></Image> 
+              <Image alt="background" layout='fill' objectFit='cover'  src={kenzoBackground}></Image> 
               <CTAContainer>
                 <CTAText>
                   Buy Kenzo Penthouse with Premium NFT now! 

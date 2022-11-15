@@ -4,10 +4,30 @@ import logo from "../public/img/konkretlogo.png"
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../styles/Home.module.css';
+import { useState } from 'react';
+import PrivacyModal from './popups/PrivacyModal';
+import ContactModal from '../components/popups/Contact';
 
 const Footer: NextPage = () => {
+  const [openPrivacyModal, setOpenPrivacyModal] = useState(false);
+  const [openContactModal, setOpenContactModal] = useState(false);
+
   return (
     <div className={styles.roboto}>
+      {openPrivacyModal &&
+            <PrivacyModal 
+            text="I hereby consent to the processing by Yepp LLC. my data, 
+            i.e. the e-mail address, in order to send to this address informations related to the the deal, 
+            the subject of which will be the transfer of property rights to real estate and possibly other 
+            contracts related to such a transaction."
+            onClose={() => setOpenPrivacyModal(false)}
+            />
+      }
+      {openContactModal &&
+            <ContactModal 
+            onClose={() => setOpenContactModal(false)}
+            />
+      }      
       <footer className="footer">
         <div className="footer-logo-container">
           <div className="footer-logo">
@@ -17,12 +37,8 @@ const Footer: NextPage = () => {
         <div className="footer-section" id="customer-service-section">
           <h4 className="footer-section-header">Customer Service</h4>
           <div className="footer-links">
-            <Link className="footer-link" href="https://www.victorgallery.pl/static/docs/privacy.39fe4d89656b.pdf">
-              <p className="footer-link">Privacy Policy</p>
-            </Link>
-            <Link className="footer-link" href="https://www.victorgallery.pl/static/docs/terms.0f6bf7412160.pdf">
-              <p className="footer-link">Terms & Conditions</p>
-            </Link>
+              <div onClick={() => setOpenPrivacyModal(true)} className="footer-link">Privacy Policy</div>
+              <div onClick={() => setOpenContactModal(true)} className="footer-link">Contact us</div>
           </div>
         </div>
         <div className="contact" id="contact-service-section">

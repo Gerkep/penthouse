@@ -12,6 +12,7 @@ import spaIcon from "../public/img/icons/spa.png";
 import { IoLockClosed, IoMail } from "react-icons/io5";
 import ContactModal from '../components/popups/Contact';
 import axios from 'axios';
+import PrivacyModal from '../components/popups/PrivacyModal';
 
 export default function Buy() {
   
@@ -19,6 +20,7 @@ export default function Buy() {
   const [displayInfo, setDisplayInfo] = useState(false);
   const [openContactModal, setOpenContactModal] = useState(false);
   const [ethPrice, setEthPrice] = useState(0);
+  const [openPrivacyModal, setOpenPrivacyModal] = useState(false);
   const ref = useRef<null | HTMLDivElement>(null);
   const handleScroll = () => {
     ref.current?.scrollIntoView({behavior: 'smooth', block: 'start'});
@@ -44,6 +46,15 @@ export default function Buy() {
   return (
     <>
       <Loading />
+      {openPrivacyModal &&
+            <PrivacyModal 
+            text="I hereby consent to the processing by Yepp LLC. my data, 
+            i.e. the e-mail address, in order to send to this address informations related to the the deal, 
+            the subject of which will be the transfer of property rights to real estate and possibly other 
+            contracts related to such a transaction."
+            onClose={() => setOpenPrivacyModal(false)}
+            />
+      }
       {openContactModal && <ContactModal onClose={() => setOpenContactModal(false)}/>}
       <div style={{position: "fixed", top: "0", left: "0", width: "100%", zIndex: "0"}}>
       <Background>
@@ -88,7 +99,7 @@ export default function Buy() {
                       <MailButton onClick={() => setOpenContactModal(true)}><IoMail /></MailButton>
                     </Buttons>
                     {displayInfo && <Info className={styles.roboto}>Contact us and we will send you an email with steps required to buy this property.</Info>}
-                    <Consent className={styles.roboto}>By buying I agree with <b>terms & conditions</b></Consent>
+                    <Consent className={styles.roboto}>By sending an email I agree with <b style={{cursor: "pointer"}} onClick={() => setOpenPrivacyModal(true)}>privacy policy</b>.</Consent>
                 </FirstColumn>
                 <SecondColumn>
                     <NFTImageContainer>
